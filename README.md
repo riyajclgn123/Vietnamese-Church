@@ -1,102 +1,64 @@
-Vietnamese Church Website - React Project
-Overview
-A modern, responsive React website for a Vietnamese Church featuring authentication, user profiles, and multiple pages with consistent design. Built with React, React Router, and custom CSS.
+# Vietnamese Church Website
 
-Features
-Responsive Design: Works on all device sizes
+This is a React-based website for a Vietnamese church. The project includes several components and pages to provide information about the church, its graduates, and contact details.
 
-Pages:
+## Project Structure
 
-Home (with photo carousel)
+```
+vietnamese-church-website
+├── public
+│   └── index.html          # Main HTML file for the React application
+├── src
+│   ├── components
+│   │   ├── Navbar.tsx      # Navigation bar component
+│   │   ├── Footer.tsx      # Footer component
+│   │   └── Graduates.tsx   # Component displaying information about graduates
+│   ├── pages
+│   │   ├── Home.tsx        # Homepage component
+│   │   ├── About.tsx       # About page component
+│   │   ├── Graduates.tsx   # Graduates page component
+│   │   └── Contact.tsx     # Contact page component
+│   ├── App.tsx             # Main application component
+│   ├── index.tsx           # Entry point for the React application
+│   └── styles
+│       ├── Navbar.css      # CSS styles for the Navbar component
+│       ├── Footer.css      # CSS styles for the Footer component
+│       └── App.css         # Global CSS styles for the application
+├── package.json             # npm configuration file
+├── tsconfig.json            # TypeScript configuration file
+└── README.md                # Project documentation
+```
 
-About (mission, history, leadership)
+## Installation
 
-Graduates (student cards)
+To get started with the project, clone the repository and install the dependencies:
 
-Contact (form and info)
-
-Authentication:
-
-Login/Sign Up functionality
-
-User profile page
-
-UI Components:
-
-Navbar with logo, navigation, and user avatar
-
-Matching footer
-
-Card-based layouts
-
-Modern color schemes
-
-Technologies Used
-React (with TypeScript)
-
-React Router
-
-React Responsive Carousel
-
-Custom CSS (no frameworks)
-
-In-memory authentication (for demo purposes)
-
-Installation
-Clone the repository:
-
-bash
-git clone https://github.com/yourusername/vietnamese-church-website.git
-Install dependencies:
-
-bash
+```bash
+git clone <repository-url>
+cd vietnamese-church-website
 npm install
-Start the development server:
+```
 
-bash
+## Running the Application
+
+To run the application in development mode, use the following command:
+
+```bash
 npm start
-Project Structure
-src/
-├── components/
-│   ├── Navbar.tsx
-│   └── Footer.tsx
-├── pages/
-│   ├── Home.tsx
-│   ├── About.tsx
-│   ├── Graduates.tsx
-│   ├── Contact.tsx
-│   ├── Login.tsx
-│   ├── SignUp.tsx
-│   └── User.tsx
-├── assets/ (for images)
-├── styles/ (for CSS files)
-└── App.tsx (main application)
-Default Login
-For demo purposes, use:
+```
 
-Email: user@example.com
+The application will be available at `http://localhost:3000`.
 
-Password: 123456
+## Features
 
-Customization
-Replace placeholder images in /public and /assets
+- A responsive navigation bar with links to Home, About, Graduates, and Contact pages.
+- A footer that mirrors the design of the navigation bar.
+- Separate components for each page to maintain a clean and organized code structure.
 
-Update content in the respective page components
+## Contributing
 
-Modify colors in CSS files to match your preferred theme
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
 
-Future Improvements
-Connect to a real backend/database
+## License
 
-Implement persistent authentication
-
-Add admin functionality
-
-Expand graduate profiles
-
-License
-This project is open-source and available under the MIT License.
-
-For full documentation, see the Project Documentation PDF included in the repository.
-
-Note: This project was developed as a demonstration and may require additional security measures for production use.
+This project is licensed under the MIT License.
