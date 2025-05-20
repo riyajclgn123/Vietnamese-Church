@@ -1,0 +1,125 @@
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.home-hero {
+  text-align: center;
+  margin-bottom: 32px;
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+  color: #fff;
+  padding: 36px 12px 28px 12px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(24,90,157,0.08);
+}
+
+.home-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.home-hero p {
+  font-size: 1.2rem;
+  color: #e0f7fa;
+}
+
+.home-carousel {
+  margin: 32px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(67,206,162,0.10);
+}
+
+.carousel .slide img {
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.home-features {
+  margin: 36px 0 28px 0;
+  text-align: center;
+}
+
+.home-features h2 {
+  color: #185a9d;
+  margin-bottom: 24px;
+}
+
+.features-list {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+  color: #2c3e50;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(247,151,30,0.10);
+  padding: 24px 18px;
+  width: 240px;
+  margin-bottom: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(247,151,30,0.18);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.home-cta {
+  text-align: center;
+  margin-top: 36px;
+  background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%);
+  color: #fff;
+  padding: 32px 12px 28px 12px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(221,36,118,0.08);
+}
+
+.home-cta-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 32px;
+  background: #fff;
+  color: #dd2476;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.home-cta-btn:hover {
+  background: #185a9d;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .home-container {
+    padding: 8px;
+  }
+  .features-list {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .feature-card {
+    width: 100%;
+  }
+  .carousel .slide img {
+    max-height: 180px;
+  }
+  .home-hero h1 {
+    font-size: 1.5rem;
+  }
+}

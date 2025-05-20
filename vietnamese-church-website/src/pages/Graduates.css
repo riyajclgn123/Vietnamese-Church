@@ -1,0 +1,120 @@
+\.graduates-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.graduates-container h1 {
+  text-align: center;
+  color: #185a9d;
+  margin-bottom: 36px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.graduates-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.graduate-card {
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(24,90,157,0.10);
+  padding: 28px 20px 20px 20px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.graduate-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(24,90,157,0.18);
+  background: linear-gradient(135deg, #185a9d 0%, #43cea2 100%);
+}
+
+.graduate-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 14px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(24,90,157,0.15);
+}
+
+.graduate-card h3 {
+  margin: 10px 0 6px 0;
+  font-size: 1.18rem;
+  color: #fff;
+}
+
+.graduate-major {
+  color: #e0f7fa;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.graduate-university {
+  color: #ffd200;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .graduates-list {
+    gap: 18px;
+  }
+  .graduate-card {
+    width: 90vw;
+    max-width: 340px;
+  }
+}
+.graduates-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.graduate-card {
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(24,90,157,0.10);
+  padding: 28px 20px 20px 20px;
+  flex: 1 1 220px;
+  max-width: 23%; /* 4 cards per row with gap */
+  min-width: 220px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1200px) {
+  .graduate-card {
+    max-width: 31%; /* 3 per row */
+  }
+}
+
+@media (max-width: 900px) {
+  .graduate-card {
+    max-width: 47%; /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .graduate-card {
+    max-width: 100%; /* 1 per row */
+  }
+  .graduates-list {
+    gap: 16px;
+  }
+}

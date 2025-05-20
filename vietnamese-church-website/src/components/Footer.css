@@ -1,0 +1,32 @@
+.footer {
+  background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+  color: #fff;
+  padding: 24px 40px;
+  text-align: center;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -2px 12px rgba(24,90,157,0.10);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 18px 10px;
+    font-size: 0.98rem;
+  }
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
