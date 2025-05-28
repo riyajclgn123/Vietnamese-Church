@@ -2,37 +2,53 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 
-type SignUpProps = {
-  onRegister: (user: {
-    email: string;
-    password: string;
-    firstName: string;
-    lastName: string;
-  }) => void;
-};
-
-const SignUp: React.FC<SignUpProps> = ({ onRegister }) => {
+const SignUp: React.FC = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSignUp = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (password !== confirm) {
-      setError('Passwords do not match');
+const handleSignUp = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (password !== confirm) {
+    setError('Passwords do not match');
+    return;
+  }
+
+  if (!firstName || !lastName) {
+    setError('Please enter your first and last name');
+    return;
+  }
+
+  setLoading(true);
+  setError('');
+
+  try {
+    const response = await fetch('http://localhost:4000/api/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password, firstName, lastName }),  // send separately
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setError(data.message || 'Registration failed'); // changed to message for backend
+      setLoading(false);
       return;
     }
-    if (!firstName || !lastName) {
-      setError('Please enter your first and last name');
-      return;
-    }
-    onRegister({ email, password, firstName, lastName });
+
     navigate('/login');
-  };
+  } catch (err) {
+    setError('Network error');
+    setLoading(false);
+  }
+};
 
   return (
     <div className="auth-container">
@@ -74,7 +90,9 @@ const SignUp: React.FC<SignUpProps> = ({ onRegister }) => {
           onChange={e => setConfirm(e.target.value)}
           required
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Signing Up...' : 'Sign Up'}
+        </button>
         <div className="auth-switch">
           Already have an account?{' '}
           <span onClick={() => navigate('/login')}>Login</span>

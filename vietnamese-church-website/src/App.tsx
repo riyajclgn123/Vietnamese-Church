@@ -11,12 +11,12 @@ import SignUp from './pages/SignUp';
 import UserPage from './pages/User';
 import './styles/App.css';
 
-type User = {
+interface User {
   email: string;
-  password: string;
   firstName: string;
   lastName: string;
-};
+  password?: string; // optional or remove this field
+}
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -34,11 +34,21 @@ const App: React.FC = () => {
     setUsers(prev => [...prev, user]);
   };
 
-  const handleLogin = (email: string, password: string) => {
-    const found = users.find(u => u.email === email && u.password === password);
-    if (found) setCurrentUser(found);
-    return !!found;
-  };
+  const handleLogin = async (email: string, password: string) => {
+  try {
+    const response = await fetch('http://localhost:4000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+    if (!response.ok) return false;
+    const user = await response.json();
+    setCurrentUser(user);
+    return true;
+  } catch (err) {
+    return false;
+  }
+};
     const handleLogout = () => {
     setIsAuthenticated(false);
     setCurrentUser(null);
@@ -57,18 +67,17 @@ const App: React.FC = () => {
           <Route
             path="/login"
             element={
-              <Login
-                onLogin={() => setIsAuthenticated(true)}
-                checkLogin={handleLogin}
-              />
+             <Login
+  onLogin={() => setIsAuthenticated(true)}
+  setCurrentUser={setCurrentUser}
+/>
+
             }
           />
           <Route
             path="/signup"
             element={
-              <SignUp
-                onRegister={handleRegister}
-              />
+              <SignUp/>
             }
           />
           {isAuthenticated ? (

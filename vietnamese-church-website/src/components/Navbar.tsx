@@ -25,6 +25,7 @@ const Navbar: React.FC<{ onLogout: () => void; onAvatarClick: () => void }> = ({
         <Link to="/about" className="navbar-link" onClick={() => setMenuOpen(false)}>About</Link>
         <Link to="/graduates" className="navbar-link" onClick={() => setMenuOpen(false)}>Graduates</Link>
         <Link to="/contact" className="navbar-link" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <Link to="/skills" className="navbar-link" onClick={() => setMenuOpen(false)}>Skills</Link>
       </div>
       <div className="navbar-right">
         <img

@@ -1,0 +1,26 @@
+{
+  "name": "backend-app",
+  "version": "1.0.0",
+  "description": "A backend application integrated with Firebase.",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^7.11.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase": "^9.0.0",
+    "firebase-admin": "^13.4.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
